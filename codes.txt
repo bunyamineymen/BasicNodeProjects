@@ -1,0 +1,89 @@
+var http = require('http');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('Hello World!');
+}).listen(8080);
+
+
+
+
+
+var http=require('http')
+var server=http.createServer((function(request,response)
+{
+	response.writeHead(200,
+	{"Content-Type" : "text/plain"});
+	response.end("Hello World\n");
+}));
+server.listen(7000);
+
+
+
+
+var request = require("request");
+	request("http://www.google.com",function(error,response,body)
+	{
+		console.log(body);
+	});
+
+
+
+
+
+var express=require('express');
+var app=express();
+app.get('/',function(req,res)
+{
+res.send('Hello World!');
+});
+var server=app.listen(3000,function() {});
+
+
+
+
+
+
+
+var express = require('express');
+var app = express();
+
+app.get('/hello', function(req, res){
+   res.send("Hello World!");
+});
+
+app.post('/hello', function(req, res){
+   res.send("You just called the post method at '/hello'!\n");
+});
+
+app.listen(3000);
+
+
+
+
+
+var express = require('express');
+var app = express();
+
+app.get('/hello', function(req, res){
+   res.send("Hello World!");
+});
+
+app.post('/hello', function(req, res){
+   res.send("You just called the post method at '/hello'!\n");
+});
+
+app.all('/test', function(req, res){
+   res.send("HTTP method doesn't have any effect on this route!");
+});
+
+app.listen(3000);
+
+
+
+
+
+
+
+
+
